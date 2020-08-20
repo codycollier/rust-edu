@@ -21,4 +21,11 @@ fn main() {
 
     println!("You guessed: {}", guess);
     println!("(bytes: {})", guess_bytes);
+    println!("");
+
+    if guess == secret {
+        println!("You got it!");
+    } else {
+        println!("Incorrect, better luck next time!");
+    }
 }
