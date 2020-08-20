@@ -13,14 +13,18 @@ fn main() {
     // Accept a guess and process
     println!("Please enter your guess: ");
 
-    let mut guess = String::new();
+    let mut guess_raw = String::new();
 
     let guess_bytes = io::stdin()
-        .read_line(&mut guess)
+        .read_line(&mut guess_raw)
         .expect("Failed to read line.");
 
-    println!("You guessed: {}", guess);
-    println!("(bytes: {})", guess_bytes);
+    let guess: i32 = guess_raw
+        .trim()
+        .parse()
+        .expect("Please enter numbers only.");
+
+    println!("You guessed: {} (bytes: {})", guess, guess_bytes);
     println!("");
 
     if guess == secret {
