@@ -25,7 +25,14 @@ fn main() {
             .read_line(&mut guess)
             .expect("Failed to read line.");
 
-        let guess: u32 = guess.trim().parse().expect("Please enter numbers only.");
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => {
+                println!("");
+                println!("(numbers only)");
+                continue;
+            }
+        };
 
         println!("You guessed: {} (bytes: {})", guess, guess_bytes);
         println!("");
