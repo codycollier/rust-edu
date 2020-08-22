@@ -21,18 +21,4 @@ fn main() {
 
     // constant
     println!("MAX_POINTS: {}", MAX_POINTS);
-
-    // numeric literals
-    println!("number: {}", 255);
-    println!("number: {}", 0xff);
-    println!("number: {}", 0o377);
-    println!("number: {}", 0b1111_1111);
-    println!("number: {}", b'Z');
-    // println!("number: {}", b'■');
-    // println!("number: {}", b'ß');
-
-    println!("number: {}", 255u32);
-    println!("number: {}", 255i32);
-    println!("number: {}", 255usize);
-    println!("number: {}", 255isize);
 }
