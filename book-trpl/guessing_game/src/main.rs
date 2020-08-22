@@ -25,7 +25,7 @@ fn main() {
             .read_line(&mut guess)
             .expect("Failed to read line.");
 
-        let guess: i32 = guess.trim().parse().expect("Please enter numbers only.");
+        let guess: u32 = guess.trim().parse().expect("Please enter numbers only.");
 
         println!("You guessed: {} (bytes: {})", guess, guess_bytes);
         println!("");
@@ -33,7 +33,10 @@ fn main() {
         match guess.cmp(&secret) {
             Ordering::Less => println!("Too low."),
             Ordering::Greater => println!("Too high."),
-            Ordering::Equal => println!("You guessed correctly!"),
+            Ordering::Equal => {
+                println!("You guessed correctly!");
+                break;
+            }
         }
         println!("");
     }
