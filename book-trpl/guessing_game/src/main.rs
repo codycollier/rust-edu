@@ -6,7 +6,6 @@ use std::cmp::Ordering;
 
 use std::io;
 
-
 fn main() {
     println!("");
     println!("Guess the number!");
@@ -17,20 +16,16 @@ fn main() {
     println!("Ssshh! The secret number is: {}", secret);
 
     loop {
-
         // Accept a guess and process
         println!("Please enter your guess: ");
 
-        let mut guess_raw = String::new();
+        let mut guess = String::new();
 
         let guess_bytes = io::stdin()
-            .read_line(&mut guess_raw)
+            .read_line(&mut guess)
             .expect("Failed to read line.");
 
-        let guess: i32 = guess_raw
-            .trim()
-            .parse()
-            .expect("Please enter numbers only.");
+        let guess: i32 = guess.trim().parse().expect("Please enter numbers only.");
 
         println!("You guessed: {} (bytes: {})", guess, guess_bytes);
         println!("");
