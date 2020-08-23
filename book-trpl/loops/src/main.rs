@@ -2,6 +2,8 @@ use rand::thread_rng;
 use rand::Rng;
 
 fn main() {
+    println!("");
+
     let mut rng = thread_rng();
     let number = rng.gen_range(0, 11);
     println!("random number: {}", number);
@@ -20,6 +22,7 @@ fn main() {
         counter += 1;
     };
     println!("      counter: {}", result);
+    println!("");
 
     // while loop
     let mut countdown = 3;
@@ -28,4 +31,13 @@ fn main() {
         countdown -= 1;
     }
     println!("Lift off!");
+    println!("");
+
+    // indexing through an array
+    let arr = [1, 3, 5, 7, 9];
+    let mut index = 0;
+    while index < arr.len() {
+        println!("arr[{}]: {}", index, arr[index]);
+        index += 1;
+    }
 }
