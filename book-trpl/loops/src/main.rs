@@ -40,4 +40,18 @@ fn main() {
         println!("arr[{}]: {}", index, arr[index]);
         index += 1;
     }
+    println!("");
+    println!("");
+
+    for x in arr.iter() {
+        println!("arr[]: {}", x);
+    }
+    println!("");
+
+    // for loop with range
+    for x in (1..11).rev() {
+        println!("{}", x);
+    }
+    println!("Lift Off!");
+    println!("");
 }
