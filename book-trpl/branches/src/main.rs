@@ -29,5 +29,7 @@ fn main() {
         println!("conditions are false (> 5)");
     }
 
-    //
+    // if condition as an expression
+    let num = if true { 5 } else { 7 };
+    println!("num is: {}", num);
 }
