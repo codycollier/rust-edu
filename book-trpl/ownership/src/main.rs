@@ -40,5 +40,9 @@ fn main() {
     // This won't work because a is no longer valid
     // println!("a: {}", a)
 
+    // if cloned, it's a deep copy of the stack part and the heap part
+    let c = b.clone();
+    println!("b: {}, c: {}", b, c)
+
     //---------------------------------------
 }
