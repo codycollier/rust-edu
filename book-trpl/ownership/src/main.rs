@@ -15,4 +15,12 @@ fn main() {
     // new var and owner, back in scope
     let s = "hi again";
     println!("s: {}", s);
+
+    //---------------------------------------
+
+    let mut s = String::from("hello");
+    println!("s: {}", s);
+    // s += ", world again!";
+    s.push_str(", world again!");
+    println!("s: {}", s);
 }
