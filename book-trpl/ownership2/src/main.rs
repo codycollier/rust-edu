@@ -12,7 +12,7 @@ fn main() {
 
 fn take_ownership(s: String) {
     println!("inside take_ownership. s: {}", s);
-}
+} // don't forget an s drop happens here as the scope ends
 
 fn makes_copy(i: i32) {
     println!("inside makes_copy. i: {}", i)
