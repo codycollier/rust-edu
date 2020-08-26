@@ -16,6 +16,11 @@ fn main() {
     // println!("in main scope: foo: {}", foo);
     // baz rules the day
     println!("in main scope: baz: {}", baz);
+
+    // tuple returns on explicit passing and moves
+    let phrase = String::from("hello from main");
+    let (phrase_len, phrase) = calc_length(phrase);
+    println!("The length of {} is {}", phrase, phrase_len);
 }
 
 fn take_ownership(s: String) {
@@ -33,4 +38,9 @@ fn gives_ownership() -> String {
 
 fn takes_and_returns_ownership(s: String) -> String {
     return s;
+}
+
+fn calc_length(s: String) -> (usize, String) {
+    let length = s.len();
+    (length, s)
 }
