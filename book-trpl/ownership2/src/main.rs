@@ -7,7 +7,15 @@ fn main() {
     let i = 42;
     makes_copy(i);
     // can do this. int is on the stack and thus copied inherently.
-    println!("in main scope. i: {}", i)
+    println!("in main scope. i: {}", i);
+
+    let foo = gives_ownership();
+    println!("in main scope: foo: {}", foo);
+    let baz = takes_and_returns_ownership(foo);
+    // foo is gone
+    // println!("in main scope: foo: {}", foo);
+    // baz rules the day
+    println!("in main scope: baz: {}", baz);
 }
 
 fn take_ownership(s: String) {
@@ -16,4 +24,13 @@ fn take_ownership(s: String) {
 
 fn makes_copy(i: i32) {
     println!("inside makes_copy. i: {}", i)
+}
+
+fn gives_ownership() -> String {
+    let s2 = String::from("emerges");
+    s2
+}
+
+fn takes_and_returns_ownership(s: String) -> String {
+    return s;
 }
