@@ -1,7 +1,17 @@
 fn main() {
     let s = String::from("hello there");
     let slen = calculate_length(&s);
-    println!("string: '{}' is len {}", s, slen)
+    println!("string: '{}' is len {}", s, slen);
+
+    // mutable variable and mutable reference
+    let mut s2 = String::from("hello there");
+    change(&mut s2);
+    println!("s2: '{}'", s);
+    // cannot have two mutable refs at once
+    // let ref1 = &mut s2;
+    // let ref2 = &mut s2;
+    // err: second mutable borrow occurs here ^^^
+    // println!("ref1: '{}'  ref2: '{}'", ref1, ref2);
 }
 
 fn calculate_length(st: &String) -> usize {
@@ -17,3 +27,7 @@ fn calculate_length(st: &String) -> usize {
 
     st.len()
 } // st reference goes out of scope, but with no ownership of value, which means no drop
+
+fn change(st: &mut String) {
+    st.push_str(", how are you")
+}
