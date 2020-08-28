@@ -28,6 +28,9 @@ fn main() {
     println!("ref1: '{}'", ref1);
     let ref2 = &mut s2;
     println!("ref2: '{}'", ref2);
+
+    // dangling pointers
+    // let ref_to_nothing = dangle();
 }
 
 fn calculate_length(st: &String) -> usize {
@@ -47,3 +50,9 @@ fn calculate_length(st: &String) -> usize {
 fn change(st: &mut String) {
     st.push_str(", how are you")
 }
+
+//fn dangle() -> &String {
+//    err: missing lifetime specifier
+//    let s = String::from("hellooooooo");
+//    &s
+//}
