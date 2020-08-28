@@ -7,10 +7,19 @@ fn main() {
     let mut s2 = String::from("hello there");
     change(&mut s2);
     println!("s2: '{}'", s);
+
+    // compiler preventions:
     // cannot have two mutable refs at once
     // let ref1 = &mut s2;
     // let ref2 = &mut s2;
     // err: second mutable borrow occurs here ^^^
+    // println!("ref1: '{}'  ref2: '{}'", ref1, ref2);
+
+    // compiler preventions:
+    // cannot have a mutable ref (writer) when there is an immutable ref (reader)
+    // another data race prevention tactic
+    // let ref1 = &s2;
+    // let ref2 = &mut s2;
     // println!("ref1: '{}'  ref2: '{}'", ref1, ref2);
 }
 
