@@ -21,6 +21,13 @@ fn main() {
     // let ref1 = &s2;
     // let ref2 = &mut s2;
     // println!("ref1: '{}'  ref2: '{}'", ref1, ref2);
+
+    // compiler preventions:
+    // but it is fine if the mutable ref comes after the immutable ref is no longer used and out of scope
+    let ref1 = &s2;
+    println!("ref1: '{}'", ref1);
+    let ref2 = &mut s2;
+    println!("ref2: '{}'", ref2);
 }
 
 fn calculate_length(st: &String) -> usize {
