@@ -1,7 +1,12 @@
 fn main() {
     let s = String::from("win the stage");
-    let fw = end_of_first_word(&s);
+    let fw = first_word(&s);
     println!("fw: {}", fw)
+}
+
+fn first_word(s: &String) -> &str {
+    let efw = end_of_first_word(s);
+    &s[..efw]
 }
 
 fn end_of_first_word(s: &String) -> usize {
