@@ -1,5 +1,6 @@
 fn main() {
     let s = String::from("win the stage");
+    // let s = String::from("stage");
     let fw = first_word(&s);
     println!("fw: {}", fw)
 }
